@@ -1,0 +1,30 @@
+services:
+  # FastAPI Backend Service
+  - type: web
+    name: recidivism-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: cd api && uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: MONGO_URI
+        sync: false
+      - key: VECTOR_DB_PATH
+        value: ./data/vector_store.index
+    disk:
+      name: data
+      mountPath: /opt/render/project/src/data
+      sizeGB: 1
+
+  # Streamlit Frontend Service
+  - type: web
+    name: recidivism-frontend
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: cd frontend && streamlit run streamlit_app.py --server.port $PORT --server.address 0.0.0.0
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: API_URL
+        value: https://recidivism-api.onrender.com
