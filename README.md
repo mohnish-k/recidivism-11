@@ -1,9 +1,12 @@
 # Recidivism Project
 
-### **Description**
-The **Recidivism Project** aims to address the problem of recidivism by utilizing machine learning models and various data analysis techniques. This repository contains code for analyzing and predicting recidivism in individuals using datasets, including processing text, generating embeddings, and performing query-based searches using the FAISS library for efficient nearest-neighbor search.
+### Description
 
-The project also includes tools for building a chatbot using OpenAI's API, which interacts with data stored in a vector index for querying and providing responses related to recidivism.
+The **Recidivism Project** aims to address the problem of recidivism by utilizing machine learning models and various data analysis techniques. This repository contains code for analyzing and predicting recidivism in individuals using datasets, including processing text, generating embeddings, and performing query-based searches using the **FAISS** library for efficient nearest-neighbor search.
+
+The project also leverages an **embedding model** to convert text data into vector embeddings, allowing for semantic similarity-based retrieval of relevant information from the dataset. This model improves the quality and relevance of responses, making it easier to query large datasets and provide context-aware insights related to recidivism.
+
+Additionally, the project includes tools for building a **chatbot** using **OpenAI's API**, which interacts with data stored in a vector index for querying and providing responses related to recidivism. The frontend is built using **Streamlit**, providing a user-friendly interface where users can input questions and receive answers based on the analysis of research papers and data related to recidivism.
 
 ### **Installation**
 
